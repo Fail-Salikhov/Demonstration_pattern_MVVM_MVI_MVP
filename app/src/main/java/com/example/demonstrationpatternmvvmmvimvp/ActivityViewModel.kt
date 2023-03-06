@@ -6,9 +6,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlin.random.Random
 
-class ActivityViewModel: ViewModel() {
+class ActivityViewModel(
+    private val data: Data
+): ViewModel() {
 
-    private val data = Data()
 
     private val _numberLiveData = MutableLiveData<String>()
     val numberLiveData: LiveData<String> = _numberLiveData
