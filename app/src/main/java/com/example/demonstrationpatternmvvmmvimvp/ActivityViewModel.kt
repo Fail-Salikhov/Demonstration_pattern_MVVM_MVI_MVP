@@ -4,9 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ActivityViewModel: ViewModel() {
+class ActivityViewModel(
+    private val data: Data
+): ViewModel() {
 
-    private val data = Data()
 
     private val _liveData = MutableLiveData<String>()
     val liveData: LiveData<String> = _liveData
