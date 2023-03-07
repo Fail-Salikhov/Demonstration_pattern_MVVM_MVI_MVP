@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        vm = ViewModelProvider(this, ViewModelFactory())[ActivityViewModel::class.java]
+        vm = ViewModelProvider(this)[ActivityViewModel::class.java]
 
         binding.buttonNumber.setOnClickListener {
             vm.counterVM()
