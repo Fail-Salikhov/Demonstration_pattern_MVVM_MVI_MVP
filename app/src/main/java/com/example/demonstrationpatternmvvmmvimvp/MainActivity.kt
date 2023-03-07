@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonNumber.setOnClickListener {
-            data.counter()
+            data.increaseNumber()
             binding.textView.text = data.count.toString()
         }
 
