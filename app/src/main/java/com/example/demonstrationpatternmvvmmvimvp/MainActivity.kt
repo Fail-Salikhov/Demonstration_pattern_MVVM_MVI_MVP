@@ -17,13 +17,20 @@ class MainActivity : AppCompatActivity() {
 
         vm = ViewModelProvider(this)[ActivityViewModel::class.java]
 
-        binding.button.setOnClickListener {
+        binding.buttonNumber.setOnClickListener {
             vm.counterVM()
         }
 
-        vm.liveData.observe(this){
+        vm.numberLiveData.observe(this){
             binding.textView.text = it
         }
 
+        binding.buttonColor.setOnClickListener {
+            vm.setRandomColor()
+        }
+
+        vm.colorLiveData.observe(this){
+            binding.textView.setTextColor(it)
+        }
     }
 }
