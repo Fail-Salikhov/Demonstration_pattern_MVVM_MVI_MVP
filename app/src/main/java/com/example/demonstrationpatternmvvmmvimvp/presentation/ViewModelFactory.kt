@@ -1,7 +1,8 @@
-package com.example.demonstrationpatternmvvmmvimvp
+package com.example.demonstrationpatternmvvmmvimvp.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.demonstrationpatternmvvmmvimvp.data.Data
 
 class ViewModelFactory: ViewModelProvider.Factory {
 

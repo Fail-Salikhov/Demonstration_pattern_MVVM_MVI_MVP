@@ -4,6 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.example.demonstrationpatternmvvmmvimvp.databinding.ActivityMainBinding
+import com.example.demonstrationpatternmvvmmvimvp.presentation.ActivityViewModel
+import com.example.demonstrationpatternmvvmmvimvp.presentation.ColorEvent
+import com.example.demonstrationpatternmvvmmvimvp.presentation.CountEvent
+import com.example.demonstrationpatternmvvmmvimvp.presentation.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,19 +22,17 @@ class MainActivity : AppCompatActivity() {
         vm = ViewModelProvider(this, ViewModelFactory())[ActivityViewModel::class.java]
 
         binding.buttonNumber.setOnClickListener {
-            vm.counterVM()
+            vm.send(CountEvent())
         }
 
-        vm.numberLiveData.observe(this){
-            binding.textView.text = it
+        vm.liveData.observe(this){
+            binding.textView.text = it.number.toString()
+            binding.textView.setTextColor(it.color)
         }
 
         binding.buttonColor.setOnClickListener {
-            vm.setRandomColor()
+            vm.send(ColorEvent())
         }
 
-        vm.colorLiveData.observe(this){
-            binding.textView.setTextColor(it)
-        }
     }
 }
