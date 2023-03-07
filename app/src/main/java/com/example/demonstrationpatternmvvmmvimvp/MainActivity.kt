@@ -1,37 +1,36 @@
 package com.example.demonstrationpatternmvvmmvimvp
 
-import android.graphics.Color
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.demonstrationpatternmvvmmvimvp.data.Data
 import com.example.demonstrationpatternmvvmmvimvp.databinding.ActivityMainBinding
-import kotlin.random.Random
+import com.example.demonstrationpatternmvvmmvimvp.prsentation.MainPresenter
+import com.example.demonstrationpatternmvvmmvimvp.prsentation.MainPresenterImpl
+import com.example.demonstrationpatternmvvmmvimvp.prsentation.MainView
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity : AppCompatActivity(), MainView {
 
     private val binding by lazy {ActivityMainBinding.inflate(layoutInflater)}
 
-    private val data = Data()
+    private val presenter: MainPresenter = MainPresenterImpl(Data(), this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
         binding.buttonNumber.setOnClickListener {
-            data.counter()
-            binding.textView.text = data.count.toString()
+            presenter.increaseNumber()
         }
 
         binding.buttonColor.setOnClickListener {
-            setRandomColor()
+            presenter.changeColor()
         }
     }
 
-    private fun setRandomColor() {
-        val randomColor = Color.rgb(
-            Random.nextInt(256),
-            Random.nextInt(256),
-            Random.nextInt(256)
-        )
-        binding.textView.setTextColor(randomColor)
+    override fun showResult(number: Int, color: Int) {
+        binding.textView.text = number.toString()
+        binding.textView.setTextColor(color)
     }
 }

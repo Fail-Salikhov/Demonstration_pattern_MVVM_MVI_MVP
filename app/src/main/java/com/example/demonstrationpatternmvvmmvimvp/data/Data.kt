@@ -1,4 +1,4 @@
-package com.example.demonstrationpatternmvvmmvimvp
+package com.example.demonstrationpatternmvvmmvimvp.data
 
 import android.util.Log
 
