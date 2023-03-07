@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.example.demonstrationpatternmvvmmvimvp.databinding.ActivityMainBinding
 import com.example.demonstrationpatternmvvmmvimvp.presentation.ActivityViewModel
-import com.example.demonstrationpatternmvvmmvimvp.presentation.ColorEvent
-import com.example.demonstrationpatternmvvmmvimvp.presentation.CountEvent
+import com.example.demonstrationpatternmvvmmvimvp.presentation.ColorChangeEvent
+import com.example.demonstrationpatternmvvmmvimvp.presentation.IncreaseNumberEvent
 import com.example.demonstrationpatternmvvmmvimvp.presentation.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         vm = ViewModelProvider(this, ViewModelFactory())[ActivityViewModel::class.java]
 
         binding.buttonNumber.setOnClickListener {
-            vm.send(CountEvent())
+            vm.send(IncreaseNumberEvent())
         }
 
         vm.liveData.observe(this){
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonColor.setOnClickListener {
-            vm.send(ColorEvent())
+            vm.send(ColorChangeEvent())
         }
 
     }

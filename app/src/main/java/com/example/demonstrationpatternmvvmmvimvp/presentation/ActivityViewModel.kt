@@ -21,17 +21,17 @@ class ActivityViewModel(
 
     fun send(event: MainEvent) {
         when(event) {
-            is CountEvent -> {
-                counterVM()
+            is IncreaseNumberEvent -> {
+                increaseNumberVM()
             }
-            is ColorEvent -> {
+            is ColorChangeEvent -> {
                 setRandomColor()
             }
         }
     }
 
-    private fun counterVM () {
-        data.counter()
+    private fun increaseNumberVM () {
+        data.increaseNumber()
         _liveData.value = MainState(data.count, -0x1000000)
     }
 

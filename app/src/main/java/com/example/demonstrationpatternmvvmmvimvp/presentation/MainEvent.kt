@@ -2,6 +2,6 @@ package com.example.demonstrationpatternmvvmmvimvp.presentation
 
 interface MainEvent
 
-class CountEvent: MainEvent
+class IncreaseNumberEvent: MainEvent
 
-class ColorEvent: MainEvent
+class ColorChangeEvent: MainEvent
