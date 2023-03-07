@@ -16,8 +16,8 @@ class ActivityViewModel(): ViewModel() {
     private val _colorLiveData = MutableLiveData<Int>(-0x1000000)
     val colorLiveData: LiveData<Int> = _colorLiveData
 
-    fun counterVM () {
-        data.counter()
+    fun increaseNumberVM () {
+        data.increaseNumber()
         _numberLiveData.value = data.count.toString()
     }
 
