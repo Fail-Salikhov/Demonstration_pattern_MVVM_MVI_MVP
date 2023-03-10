@@ -15,10 +15,6 @@ class ActivityViewModel(
     private val _liveData = MutableLiveData<MainState>()
     val liveData: LiveData<MainState> = _liveData
 
-    private val _colorLiveData = MutableLiveData<Int>(-0x1000000)
-    val colorLiveData: LiveData<Int> = _colorLiveData
-
-
     fun send(event: MainEvent) {
         when(event) {
             is IncreaseNumberEvent -> {
