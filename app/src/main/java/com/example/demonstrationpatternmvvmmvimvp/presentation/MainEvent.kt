@@ -1,6 +1,6 @@
 package com.example.demonstrationpatternmvvmmvimvp.presentation
 
-interface MainEvent
+sealed interface MainEvent
 
 class IncreaseNumberEvent: MainEvent
 
