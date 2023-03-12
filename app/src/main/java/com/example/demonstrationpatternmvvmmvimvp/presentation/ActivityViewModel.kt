@@ -18,20 +18,20 @@ class ActivityViewModel(
     fun send(event: MainEvent) {
         when(event) {
             is IncreaseNumberEvent -> {
-                increaseNumberVM()
+                buttonIncrease()
             }
             is ColorChangeEvent -> {
-                setRandomColor()
+                buttonChangeColor()
             }
         }
     }
 
-    private fun increaseNumberVM () {
+    private fun buttonIncrease () {
         data.increaseNumber()
         _liveData.value = MainState(data.count, -0x1000000)
     }
 
-    private fun setRandomColor() {
+    private fun buttonChangeColor() {
         val randomColor = Color.rgb(
             Random.nextInt(256),
             Random.nextInt(256),
