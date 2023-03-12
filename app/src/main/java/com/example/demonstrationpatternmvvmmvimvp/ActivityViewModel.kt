@@ -16,12 +16,12 @@ class ActivityViewModel(): ViewModel() {
     private val _colorLiveData = MutableLiveData<Int>(-0x1000000)
     val colorLiveData: LiveData<Int> = _colorLiveData
 
-    fun increaseNumberVM () {
+    fun buttonIncrease () {
         data.increaseNumber()
         _numberLiveData.value = data.count.toString()
     }
 
-    fun setRandomColor() {
+    fun buttonChangeColor() {
         val randomColor = Color.rgb(
             Random.nextInt(256),
             Random.nextInt(256),

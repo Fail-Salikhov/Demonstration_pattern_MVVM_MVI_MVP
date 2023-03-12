@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         vm = ViewModelProvider(this)[ActivityViewModel::class.java]
 
         binding.buttonNumber.setOnClickListener {
-            vm.increaseNumberVM()
+            vm.buttonIncrease()
         }
 
         vm.numberLiveData.observe(this){
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.buttonColor.setOnClickListener {
-            vm.setRandomColor()
+            vm.buttonChangeColor()
         }
 
         vm.colorLiveData.observe(this){
