@@ -21,11 +21,11 @@ class MainActivity : AppCompatActivity(), MainView {
         setContentView(binding.root)
 
         binding.buttonNumber.setOnClickListener {
-            presenter.increaseNumber()
+            presenter.buttonIncrease()
         }
 
         binding.buttonColor.setOnClickListener {
-            presenter.changeColor()
+            presenter.buttonChangeColor()
         }
     }
 

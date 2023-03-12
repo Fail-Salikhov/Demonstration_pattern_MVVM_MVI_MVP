@@ -9,12 +9,12 @@ class MainPresenterImpl(
     private val view: MainView
 ) : MainPresenter {
 
-    override fun increaseNumber() {
+    override fun buttonIncrease() {
         data.counter()
         view.showResult(data.count, -0x1000000)
     }
 
-    override fun changeColor() {
+    override fun buttonChangeColor() {
         val randomColor = Color.rgb(
             Random.nextInt(256),
             Random.nextInt(256),
