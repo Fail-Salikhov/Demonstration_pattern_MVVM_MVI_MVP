@@ -4,7 +4,7 @@ class Data {
 
     var count = 0
 
-    fun increaseNumber () {
+    fun buttonIncrease () {
         count++
     }
 

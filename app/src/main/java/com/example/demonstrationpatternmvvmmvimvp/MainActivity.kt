@@ -17,16 +17,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonNumber.setOnClickListener {
-            data.increaseNumber()
+            data.buttonIncrease()
             binding.textView.text = data.count.toString()
         }
 
         binding.buttonColor.setOnClickListener {
-            setRandomColor()
+            buttonChangeColor()
         }
     }
 
-    private fun setRandomColor() {
+    private fun buttonChangeColor() {
         val randomColor = Color.rgb(
             Random.nextInt(256),
             Random.nextInt(256),
